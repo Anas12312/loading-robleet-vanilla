@@ -1,96 +1,223 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.circles {
+  height: 100vmin;
+  position: absolute;
+  width: 100%;
+
+  >div {
+    animation: growAndFade 4s infinite ease-out;
+    border-radius: 50%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .circle1 {
+    animation-delay: 0.2s;
+  }
+
+  .circle2 {
+    animation-delay: 0.8s;
+  }
+
+  .circle3 {
+    animation-delay: 1.4s;
+  }
+
+  .circle4 {
+    animation-delay: 2s;
+  }
+
+  .circle5 {
+    animation-delay: 2.6s;
+  }
+
+  .circle6 {
+    animation-delay: 3.4s;
+  }
+
+  .circle7 {
+    animation-delay: 4s;
+  }
+
+}
+.heart-endless {
+  animation: heartbeat 2s infinite;
+}
+.fade-in {
+  animation: growAndFade3 1s 1;
+}
+.fade-out {
+  animation: shrinkAndFade 1s 1;
+}
+@keyframes shrinkAndFade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+@keyframes growAndFade {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.loadings {
+  height: 50vmin;
+  position: absolute;
+  width: 50vmin;
+
+  >div {
+    animation: growAndFade2 3s infinite ease-out;
+    background-color: #b6a057;
+    border-radius: 50%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .loading1 {
+    animation-delay: 1s;
+  }
+
+  .loading2 {
+    animation-delay: 2s;
+  }
+
+  .loading3 {
+    animation-delay: 3s;
+  }
+
+
 }
-a:hover {
-  color: #535bf2;
+@keyframes growAndFade3 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes growAndFade2 {
+  0% {
+    opacity: 0.15;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
 }
 
 body {
-  margin: 0;
+  align-items: center;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  background: linear-gradient(to top, #171717 0%, #28194b 100%);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.object {
+  animation: MoveUpDown 1s linear infinite;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+@keyframes MoveUpDown {
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+  0%,
+  100% {
+    bottom: 0;
   }
-  a:hover {
-    color: #747bff;
+
+  50% {
+    bottom: 100px;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 4s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+.typewriter-inv h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing-inv 1s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+/* The typing effect */
+@keyframes typing {
+  from, to { width: 0 }
+  25% { width: 100% }
+  50% { width: 100% }
+  75% { width: 100% }
+}
+@keyframes typing-inv {
+  from { width: 100% }
+  to { width: 0 }
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+.heart {
+  animation: heartbeat 2s 3;
+}
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( 1 );
+  }
+  20%
+  {
+    transform: scale( .75 );
+  }
+  40%
+  {
+    transform: scale( 1 );
+  }
+  60%
+  {
+    transform: scale( .75 );
+  }
+  80%
+  {
+    transform: scale( 1 );
+  }
+  100%
+  {
+    transform: scale( 1 );
   }
 }
