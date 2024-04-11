@@ -1,5 +1,3 @@
-import './style.css'
-
 const tipElement = document.getElementById('tip')
 const logo = document.getElementById('logo')
 animate()
