@@ -22,27 +22,27 @@
   }
 
   .circle2 {
-    animation-delay: 0.8s;
+    animation-delay: 1.6s;
   }
 
   .circle3 {
-    animation-delay: 1.4s;
+    animation-delay: 2.8s;
   }
 
   .circle4 {
-    animation-delay: 2s;
+    animation-delay: 4s;
   }
 
   .circle5 {
-    animation-delay: 2.6s;
+    animation-delay: 5.2s;
   }
 
   .circle6 {
-    animation-delay: 3.4s;
+    animation-delay: 6.8s;
   }
 
   .circle7 {
-    animation-delay: 4s;
+    animation-delay: 8s;
   }
 
 }
@@ -154,7 +154,15 @@ body {
     bottom: 100px;
   }
 }
-
+.slogan h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing-2 1s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
 .typewriter h1 {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid orange; /* The typwriter cursor */
@@ -181,6 +189,10 @@ body {
   25% { width: 100% }
   50% { width: 100% }
   75% { width: 100% }
+}
+@keyframes typing-2 {
+  from { width: 0 }
+  to { width: 100% }
 }
 @keyframes typing-inv {
   from { width: 100% }
