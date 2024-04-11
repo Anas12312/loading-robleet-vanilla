@@ -46,15 +46,19 @@
   }
 
 }
+
 .heart-endless {
   animation: heartbeat 2s infinite;
 }
+
 .fade-in {
   animation: growAndFade3 1s 1;
 }
+
 .fade-out {
   animation: shrinkAndFade 1s 1;
 }
+
 @keyframes shrinkAndFade {
   0% {
     opacity: 1;
@@ -66,6 +70,7 @@
     transform: scale(0);
   }
 }
+
 @keyframes growAndFade {
   0% {
     opacity: 1;
@@ -107,6 +112,7 @@
 
 
 }
+
 @keyframes growAndFade3 {
   0% {
     opacity: 0;
@@ -118,6 +124,7 @@
     transform: scale(1);
   }
 }
+
 @keyframes growAndFade2 {
   0% {
     opacity: 0.15;
@@ -164,72 +171,152 @@ body {
     blink-caret .75s step-end infinite;
 }
 .typewriter h1 {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange;
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  animation:
     typing 4s steps(40, end),
     blink-caret .75s step-end infinite;
 }
+
 .typewriter-inv h1 {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange;
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  animation:
     typing-inv 1s steps(40, end),
     blink-caret .75s step-end infinite;
 }
+
 /* The typing effect */
 @keyframes typing {
-  from, to { width: 0 }
-  25% { width: 100% }
-  50% { width: 100% }
-  75% { width: 100% }
+
+  from,
+  to {
+    width: 0
+  }
+
+  25% {
+    width: 100%
+  }
+
+  50% {
+    width: 100%
+  }
+
+  75% {
+    width: 100%
+  }
 }
+
 @keyframes typing-2 {
   from { width: 0 }
   to { width: 100% }
 }
+
 @keyframes typing-inv {
-  from { width: 100% }
-  to { width: 0 }
+  from {
+    width: 100%
+  }
+
+  to {
+    width: 0
+  }
 }
+
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: orange;
+  }
 }
+
 .heart {
   animation: heartbeat 2s 3;
 }
-@keyframes heartbeat
-{
-  0%
-  {
-    transform: scale( 1 );
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
   }
-  20%
-  {
-    transform: scale( .75 );
+
+  20% {
+    transform: scale(.75);
   }
-  40%
-  {
-    transform: scale( 1 );
+
+  40% {
+    transform: scale(1);
   }
-  60%
-  {
-    transform: scale( .75 );
+
+  60% {
+    transform: scale(.75);
   }
-  80%
-  {
-    transform: scale( 1 );
+
+  80% {
+    transform: scale(1);
   }
-  100%
-  {
-    transform: scale( 1 );
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.stars {
+  width: 2px;
+  position: absolute;
+  height: 2px;
+  border-radius: 50%;
+  background: white;
+  animation: animStar 50s linear infinite;
+}
+
+
+.stars2 {
+  width: 3px;
+  position: absolute;
+  height: 3px;
+  border-radius: 50%;
+  background: white;
+  animation: animStar 100s linear infinite;
+}
+
+.stars3 {
+  width: 4px;
+  position: absolute;
+  height: 4px;
+  border-radius: 50%;
+  background: white;
+  animation: animStar 150s linear infinite;
+}
+
+
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-3000px)
   }
 }

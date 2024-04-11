@@ -1,9 +1,76 @@
-import './style.css'
-
 const tipElement = document.getElementById('tip')
 const logo = document.getElementById('logo')
+
+const starBackground = document.getElementById('starts-background')
+const starElArr = [];
+animateBackground()
+
 const slogan = document.getElementById('slogan')
+
 animate()
+
+
+
+
+function animateBackground() {
+  let count = 0;
+
+  const random = (min, max) => {
+    return Math.floor(Math.random() * max) + min;
+  }
+
+  const generateStar = () => {
+    const randomStarType = random(1, 3);
+    const starEl = document.createElement('div');
+
+    if (randomStarType === 1) {
+      starEl.classList.add('stars');
+      starEl.style.bottom = random(-3000,3000)+ 'px'
+      starEl.style.left = `${random(0, 100)}%`
+    }
+
+    if (randomStarType === 2) {
+      starEl.classList.add('stars2');
+      starEl.style.bottom = random(-3000,3000)+ 'px'
+      starEl.style.left = `${random(0, 100)}%`
+    }
+
+    if (randomStarType === 3) {
+      starEl.classList.add('stars3');
+      starEl.style.bottom = random(-3000,3000) + 'px'
+      starEl.style.left = `${random(0, 100)}%`
+    }
+    starElArr.push(starEl);
+    document.body.appendChild(starEl);
+  }
+
+  console.log(random(1, 5));
+
+  // setInterval(() => {
+
+  let n = 400
+  while (--n) {
+    generateStar();
+  }
+
+
+  // }, 2000)
+
+  // setInterval(() => {
+  //   for (let i = 0; i < starElArr.length; i++) {
+  //     if (starElArr[i].getBoundingClientRect().top < 0) {
+  //       console.log('reset');
+  //       starElArr[i].style.bottom = random(-3000,3000)+ 'px'
+  //       starElArr[i].style.left = `${random(0, 100)}%`;
+  //     }
+  //   }
+  // }, 200000)
+
+}
+
+
+
+
 function animate() {
   tipElement.style.display = "none"
   slogan.style.display = "none"
