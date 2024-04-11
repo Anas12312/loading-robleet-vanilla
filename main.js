@@ -2,9 +2,11 @@ import './style.css'
 
 const tipElement = document.getElementById('tip')
 const logo = document.getElementById('logo')
+const slogan = document.getElementById('slogan')
 animate()
 function animate() {
   tipElement.style.display = "none"
+  slogan.style.display = "none"
   setTimeout(() => {
     logo?.classList.remove('fade-in')
     logo?.offsetWidth
@@ -22,9 +24,13 @@ function animate() {
           logo.style.width = "29%"
           logo?.offsetWidth
           logo?.classList.add('fade-in')
+
+          slogan.style.display = "block"
+          slogan.classList.add('slogan')
           animateTip()
           setTimeout(() => {
             logo?.classList.remove('fade-in')
+            slogan.classList.add('heart-endless')
             logo?.offsetWidth
             logo?.classList.add('heart-endless')
 
